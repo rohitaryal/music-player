@@ -1,0 +1,84 @@
+.drawer {
+  display: grid;
+  overflow: hidden auto;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  background-color: rgba(255, 255, 255, 0.134);
+}
+
+.drawer-display-profile {
+  width: 100%;
+  display: flex;
+  margin-top: 4rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.drawer-display-profile .user-avatar {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-image: url(https://img.freepik.com/free-photo/3d-render-little-boy-with-eyeglasses-blue-shirt_1142-50994.jpg?t=st=1720360158~exp=1720363758~hmac=4b3ebf1d6cb2f41b82a0fec4ce182d7bd81b7227dc9d0e9213a988cc9dd7f7de&w=900);
+  background-size: contain;
+}
+
+.drawer-display-profile .user-stats {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.drawer-display-profile .user-name {
+  font-size: x-large;
+  font-weight: bolder;
+  text-overflow: ellipsis;
+  width: 8rem;
+  white-space: nowrap;
+}
+
+.drawer-display-profile .membership-status {
+  border-radius: 10px;
+  font-size: x-small;
+  text-align: center;
+  border: 2px solid var(--color-two);
+  margin-top: 0.3rem;
+  padding: 0 .5rem;
+  width: fit-content;
+}
+
+ul {
+  margin: 0 2rem;
+  list-style-type: none;
+}
+
+ul header {
+  font-size: small;
+  margin-bottom: 1rem;
+  font-weight: bolder;
+}
+
+.drawer-list {
+  font-size: x-large;
+}
+
+.drawer-list-item {
+  width: max-content;
+  border-radius: 20px;
+  padding: 0 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.drawer-list-item.active,
+.drawer-list-item:hover {
+  background-color: rgba(0, 0, 0, 0.298);
+}
+
+.drawer-list-v1 .drawer-list-item{
+    display: flex;
+    min-width: 100px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    font-size: large;
+}

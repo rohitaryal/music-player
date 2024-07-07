@@ -1,0 +1,46 @@
+:root {
+  --color-one: #cfdbd5;
+  --color-two: #e8eddf;
+  --color-three: #f5cb5c;
+  --color-four: #242423;
+  --color-five: #333533;
+  color-scheme: light dark;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  padding: .5rem;
+  /* background-color: var(--color-four); */
+  background-image: url(../assets/wall.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-clip: border-box;
+  background-size: cover;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  border-radius: 1rem;
+  overflow: hidden;
+  grid-template-rows: 100vh;
+  backdrop-filter: blur(0px);
+  grid-template-columns: 250px 10fr;
+  backdrop-filter: blur(10px);
+  /* background-color: var(--color-five); */
+}
