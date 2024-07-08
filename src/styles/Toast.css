@@ -1,0 +1,37 @@
+.toast {
+  position: absolute;
+  padding: 0.5rem;
+  display: flex;
+  z-index: 100;
+  top: -10%;
+  right: 50%;
+  width: 20rem;
+  justify-content: space-between;
+  transform: translateX(50%);
+  border-radius: 10px;
+  align-items: center;
+  transition-duration: .2s;
+}
+
+.toast.show {
+    top: 1%;
+}
+
+
+.toast .mdi {
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  line-height: 2rem;
+  font-size: large;
+}
+
+.toast .mdi-close {
+  transition-duration: 0.2s;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.toast .mdi-close:hover {
+  background-color: rgba(255, 255, 255, 0.216);
+}
