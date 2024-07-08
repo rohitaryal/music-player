@@ -1,55 +1,39 @@
+import { useState } from "react";
 import "../styles/AllSongs.css";
+import { GetFirebase } from "../util/Firebase";
 
 const AllSongs = () => {
+  const [popularSongs, setPopularSongs] = useState([]);
+  const firebase = GetFirebase();
+
+  firebase.getData("/other/").then((data) => {
+    if (data.exists()) {
+      setPopularSongs(data.val());
+    }
+  });
+
   return (
     <div className="all-songs-container">
       <header>Listen More</header>
       <div className="small-card-row-container">
-      <div className="music-card-small">
-          <span className="music-detail">
-            <span className="music-name">Anima</span>
-            <span className="author">
-              <span className="mdi mdi-account-music-outline"></span>
-              <span className="author-name">ReoNa</span>
-            </span>
-          </span>
-        </div>
-        <div className="music-card-small">
-          <span className="music-detail">
-            <span className="music-name">Anima</span>
-            <span className="author">
-              <span className="mdi mdi-account-music-outline"></span>
-              <span className="author-name">ReoNa</span>
-            </span>
-          </span>
-        </div>
-        <div className="music-card-small">
-          <span className="music-detail">
-            <span className="music-name">Anima</span>
-            <span className="author">
-              <span className="mdi mdi-account-music-outline"></span>
-              <span className="author-name">ReoNa</span>
-            </span>
-          </span>
-        </div>
-        <div className="music-card-small">
-          <span className="music-detail">
-            <span className="music-name">Anima</span>
-            <span className="author">
-              <span className="mdi mdi-account-music-outline"></span>
-              <span className="author-name">ReoNa</span>
-            </span>
-          </span>
-        </div>
-        <div className="music-card-small">
-          <span className="music-detail">
-            <span className="music-name">Anima</span>
-            <span className="author">
-              <span className="mdi mdi-account-music-outline"></span>
-              <span className="author-name">ReoNa</span>
-            </span>
-          </span>
-        </div>
+        {popularSongs.map((element) => {
+          return (
+            <div className="music-card-small" key={element.image}>
+              <span className="music-detail">
+                <span className="music-name">{element.song_name}</span>
+                <span className="author">
+                  <span
+                    className="mdi mdi-account-music-outline"
+                    style={{
+                      backgroundImage: element.image,
+                    }}
+                  ></span>
+                  <span className="author-name">{element.author}</span>
+                </span>
+              </span>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

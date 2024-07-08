@@ -2,7 +2,6 @@ import "../styles/LoginDialog.css";
 import { useState } from "react";
 import { GetFirebase } from "../util/Firebase";
 import Toast from "../util/Toast";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const isLoggedIn = false;
 
@@ -29,7 +28,7 @@ const LoginDialog = () => {
       .logIn(email, password)
       .then((data) => {
         setDialogVisible(false);
-        console.log(data);
+        showToast("Login Successful", "info");
       })
       .catch((err) => {
         showToast(err.message, "warn");
@@ -46,7 +45,7 @@ const LoginDialog = () => {
       .signUp(email, password)
       .then((data) => {
         setDialogVisible(false);
-        console.log(data);
+        showToast("Signup Successful", "info");
       })
       .catch((err) => {
         showToast(err.message, "warn");

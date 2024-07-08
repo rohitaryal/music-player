@@ -1,12 +1,14 @@
 import "../styles/Drawer.css";
 
-const Drawer = () => {
+const Drawer = ({user}) => {
+  const name = user && user.email && user.email.slice(0, user.email.indexOf("@")) || "Anonymous";
+
   return (
     <div className="drawer">
       <span className="drawer-display-profile">
         <span className="user-avatar"></span>
         <span className="user-stats">
-          <span className="user-name">Jospeh Jon</span>
+          <span className="user-name">{name}</span>
           <span className="membership-status premium">Premium</span>
         </span>
       </span>

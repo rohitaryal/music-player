@@ -38,7 +38,7 @@ const Navigation = () => {
       <input type="text" name="search" id="search" placeholder="Search" />
       <span className="mdi mdi-bell-outline"></span>
       <span className="mdi mdi-cog-outline"></span>
-      <span class="mdi mdi-logout" onClick={handleSignOut}></span>
+      <span className="mdi mdi-logout" onClick={handleSignOut}></span>
       {toast.visible && <Toast message={toast.message} type={toast.type} />}
     </div>
   );
