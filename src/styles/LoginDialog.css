@@ -1,0 +1,127 @@
+.background-cover {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: scale(0);
+    z-index: 2;
+    transition-duration: .3s;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.425);
+}
+
+.background-cover.active {
+    transform: scale(1);
+}
+
+.dialog-container {
+  z-index: 2;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: scale(0) translate(-50%, -50%);
+  background-color: transparent;
+  height: fit-content;
+  width: 18rem;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.697);
+  padding: 1rem;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 2px solid white;
+  transition-duration: .3s;
+  transform-origin: top left;
+}
+
+.dialog-container.active {
+  transform: scale(1) translate(-50%, -50%);
+}
+
+.login-dialog::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  filter: blur(10px);
+}
+
+.login-dialog h2 {
+    margin: 1rem;
+}
+
+.login-dialog form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-dialog input {
+  padding: 1rem 0.5rem;
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  background-color: transparent;
+
+}
+
+.login-dialog .input-container {
+  margin-top: 1rem;
+  font-size: small;
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.205);
+  align-items: center;
+  border-radius: 10px;
+}
+
+.login-dialog .input-container .mdi {
+    font-size: 1rem;
+    margin: 1rem;
+}
+
+.login-dialog button {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  transition-duration: .2s;
+  background-color: #6FB555;
+}
+
+.login-dialog button:hover {
+    filter: invert();
+}
+
+.login-dialog a {
+    margin: 1rem;
+    text-decoration: underline;
+    color: rgb(255, 255, 255);
+    font-size: small;
+}
+
+.login-dialog .third-party-login {
+    display: flex;
+    gap: 10px;
+}
+
+.login-dialog .third-party-login button {
+    width: 100%;
+    display: flex;
+}
+
+.login-dialog .third-party-name {
+    width: 100%;
+}
+
+.login-dialog button:nth-child(1){
+    background-color: #ff0000a1;
+    color: white;
+}
+
+.login-dialog button:nth-child(2){
+    background-color: rgb(18, 15, 15);
+    color: white;
+}
