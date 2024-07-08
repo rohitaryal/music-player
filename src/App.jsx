@@ -21,7 +21,7 @@ const App = () => {
   return (
     <>
       {!user && <LoginDialog />}
-      <Drawer user={user}/>
+      <Drawer user={user} />
       <Body />
     </>
   );

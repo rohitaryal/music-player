@@ -36,7 +36,7 @@ const Popular = () => {
               <span
                 className="music-image"
                 style={{
-                  backgroundImage: element.image,
+                  backgroundImage: `url(${element.image})`,
                 }}
               ></span>
             </div>
