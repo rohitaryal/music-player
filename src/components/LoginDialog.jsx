@@ -8,12 +8,15 @@ const LoginDialog = () => {
 
   const signInWithPassword = (visibility) => {
     setDialogVisible(!visibility);
-  }
+  };
 
   return (
     <>
-      <div className={("background-cover ") + (dialogVisible ? "active" : "") }></div>
-      <div className={("dialog-container ") + (dialogVisible ? "active" : "")}>
+      <div
+        className={"background-cover " + (dialogVisible ? "active" : "")}
+        onClick={() => setDialogVisible(false)}
+      ></div>
+      <div className={"dialog-container " + (dialogVisible ? "active" : "")}>
         <div className="login-dialog">
           <h2>Login Here</h2>
           <form>
@@ -25,7 +28,12 @@ const LoginDialog = () => {
               <span className="mdi mdi-form-textbox-password"></span>
               <input type="password" placeholder="Password" />
             </span>
-            <button type="submit" onClick={()=>signInWithPassword(dialogVisible)}>LOGIN</button>
+            <button
+              type="submit"
+              onClick={() => signInWithPassword(dialogVisible)}
+            >
+              LOGIN
+            </button>
             <a href="#">Forgot Username/Password?</a>
             <span className="third-party-login">
               <button>
