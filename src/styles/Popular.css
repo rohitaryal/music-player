@@ -1,0 +1,65 @@
+.popular-card {
+  padding: 1rem;
+  width: 100%;
+}
+
+.popular-card header {
+  font-weight: bolder;
+  margin-bottom: 0.5rem;
+}
+
+.popular-card .card-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+}
+
+.popular-card .music-card-big {
+  background-color: rgba(0, 0, 0, 0.128);
+  height: 15rem;
+  width: 25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-radius: 1rem;
+  flex-shrink: 0;
+  transition-duration: 0.2s;
+  z-index: 1;
+}
+
+.popular-card .music-card-big:hover {
+  transform: scale(0.95);
+  background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.706) 10%, rgba(69, 69, 69, 0.286) 90%,  rgba(52, 52, 52, 0.286) 90%);
+}
+
+.popular-card .music-detail {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.popular-card .music-image {
+  background-image: url(https://i.scdn.co/image/ab67706f00000002bd0151f6679805870586c227);
+  height: 10rem;
+  width: 10rem;
+  display: block;
+  border-radius: 1rem;
+  background-position: center;
+  background-size: cover;
+}
+
+.popular-card button {
+  border-radius: 1rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition-duration: 0.2s;
+}
+
+.popular-card button:hover {
+  background-color: rgba(255, 255, 255, 0.272);
+  color: rgb(0, 0, 0);
+}

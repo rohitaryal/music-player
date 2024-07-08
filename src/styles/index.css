@@ -36,11 +36,11 @@ body {
   height: 100%;
   width: 100%;
   display: grid;
-  border-radius: 1rem;
   overflow: hidden;
+  border-radius: 1rem;
   grid-template-rows: 100vh;
   backdrop-filter: blur(0px);
-  grid-template-columns: 250px 10fr;
+  grid-template-columns: 250px calc(100vw - 270px);
   backdrop-filter: blur(10px);
   /* background-color: var(--color-five); */
 }
