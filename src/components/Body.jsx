@@ -1,7 +1,7 @@
 import "../styles/Body.css";
 import Navigation from "./Navigation";
 import Popular from "./Popular"
-import AllSongs from "./AllSongs.jsx";
+import AllSongs from "./AllSongs";
 
 const Body = () => {
     return (

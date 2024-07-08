@@ -1,0 +1,48 @@
+.all-songs-container {
+  overflow: auto;
+  padding: 1rem;
+}
+
+.all-songs-container header {
+  font-weight: bolder;
+  margin-bottom: 1rem;
+}
+
+.all-songs-container .small-card-row-container {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, 8rem);
+}
+
+.all-songs-container .music-card-small {
+  height: 10rem;
+  width: 8rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  padding: 1rem;
+  display: flex;
+  align-items: flex-end;
+  background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 50%,
+      rgba(0, 0, 0, 1) 
+    ),
+    url("https://i.scdn.co/image/ab67616d00001e02c92bcfed389c0ce3e97eb7c5")
+      no-repeat center/cover;
+      transition-duration: .2s;
+}
+
+.all-songs-container .music-card-small:hover {
+    transform: translateY(10px);
+}
+
+.all-songs-container .music-detail {
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.all-songs-container .music-detail .mdi {
+  margin-right: 0.5rem;
+}

@@ -9,7 +9,7 @@ const Popular = () => {
           <span className="music-detail">
             <h2>Spark Again</h2>
             <span className="author">
-              <span class="mdi mdi-account-music-outline"></span> &nbsp;
+              <span className="mdi mdi-account-music-outline"></span> &nbsp;
               <span className="author-name">Aimer</span>
             </span>
             <button>Play</button>
@@ -20,7 +20,7 @@ const Popular = () => {
           <span className="music-detail">
             <h2>Spark Again</h2>
             <span className="author">
-              <span class="mdi mdi-account-music-outline"></span> &nbsp;
+              <span className="mdi mdi-account-music-outline"></span> &nbsp;
               <span className="author-name">Aimer</span>
             </span>
             <button>Play</button>
@@ -31,7 +31,7 @@ const Popular = () => {
           <span className="music-detail">
             <h2>Spark Again</h2>
             <span className="author">
-              <span class="mdi mdi-account-music-outline"></span> &nbsp;
+              <span className="mdi mdi-account-music-outline"></span> &nbsp;
               <span className="author-name">Aimer</span>
             </span>
             <button>Play</button>
@@ -42,7 +42,7 @@ const Popular = () => {
           <span className="music-detail">
             <h2>Spark Again</h2>
             <span className="author">
-              <span class="mdi mdi-account-music-outline"></span> &nbsp;
+              <span className="mdi mdi-account-music-outline"></span> &nbsp;
               <span className="author-name">Aimer</span>
             </span>
             <button>Play</button>
