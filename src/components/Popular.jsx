@@ -8,7 +8,10 @@ const Popular = () => {
         <div className="music-card-big">
           <span className="music-detail">
             <h2>Spark Again</h2>
-            <span className="author">Aimer</span>
+            <span className="author">
+              <span class="mdi mdi-account-music-outline"></span> &nbsp;
+              <span className="author-name">Aimer</span>
+            </span>
             <button>Play</button>
           </span>
           <span className="music-image"></span>
@@ -16,7 +19,10 @@ const Popular = () => {
         <div className="music-card-big">
           <span className="music-detail">
             <h2>Spark Again</h2>
-            <span className="author">Aimer</span>
+            <span className="author">
+              <span class="mdi mdi-account-music-outline"></span> &nbsp;
+              <span className="author-name">Aimer</span>
+            </span>
             <button>Play</button>
           </span>
           <span className="music-image"></span>
@@ -24,7 +30,10 @@ const Popular = () => {
         <div className="music-card-big">
           <span className="music-detail">
             <h2>Spark Again</h2>
-            <span className="author">Aimer</span>
+            <span className="author">
+              <span class="mdi mdi-account-music-outline"></span> &nbsp;
+              <span className="author-name">Aimer</span>
+            </span>
             <button>Play</button>
           </span>
           <span className="music-image"></span>
@@ -32,7 +41,10 @@ const Popular = () => {
         <div className="music-card-big">
           <span className="music-detail">
             <h2>Spark Again</h2>
-            <span className="author">Aimer</span>
+            <span className="author">
+              <span class="mdi mdi-account-music-outline"></span> &nbsp;
+              <span className="author-name">Aimer</span>
+            </span>
             <button>Play</button>
           </span>
           <span className="music-image"></span>
