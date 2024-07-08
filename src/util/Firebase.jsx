@@ -4,6 +4,7 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithPopup,
+  signOut
 } from "firebase/auth";
 import { getDatabase, set, ref, child } from "firebase/database";
 import { getAnalytics } from "firebase/analytics";
@@ -50,10 +51,14 @@ const FirebaseContext = createContext(null);
 
 export const GetFirebase = () => useContext(FirebaseContext);
 
+export const sign_out = () => {
+  return signOut(auth);
+}
+
 export const FirebaseProvider = ({ children }) => {
   return (
     <FirebaseContext.Provider
-      value={{ putData, logIn, signUp, loginWithGoogle }}
+      value={{ putData, logIn, signUp, loginWithGoogle, auth, sign_out }}
     >
       {children}
     </FirebaseContext.Provider>

@@ -10,13 +10,12 @@
   transform: translateX(50%);
   border-radius: 10px;
   align-items: center;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
 .toast.show {
-    top: 1%;
+  top: 1%;
 }
-
 
 .toast .mdi {
   width: 2rem;

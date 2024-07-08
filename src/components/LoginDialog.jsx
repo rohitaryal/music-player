@@ -2,6 +2,7 @@ import "../styles/LoginDialog.css";
 import { useState } from "react";
 import { GetFirebase } from "../util/Firebase";
 import Toast from "../util/Toast";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const isLoggedIn = false;
 
@@ -18,9 +19,38 @@ const LoginDialog = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const signInWithPassword = (visibility) => {
-    setDialogVisible(!visibility);
-    showToast("Login Successful", "info");
+  const logIn = () => {
+    if (email == "" || !email.includes("@") || password.length < 6) {
+      showToast("Invalid credidentials", "warn");
+      return;
+    }
+
+    firebase
+      .logIn(email, password)
+      .then((data) => {
+        setDialogVisible(false);
+        console.log(data);
+      })
+      .catch((err) => {
+        showToast(err.message, "warn");
+      });
+  };
+
+  const signUp = () => {
+    if (email == "" || !email.includes("@") || password.length < 6) {
+      showToast("Invalid credidentials", "warn");
+      return;
+    }
+
+    firebase
+      .signUp(email, password)
+      .then((data) => {
+        setDialogVisible(false);
+        console.log(data);
+      })
+      .catch((err) => {
+        showToast(err.message, "warn");
+      });
   };
 
   const showToast = (message, type) => {
@@ -60,12 +90,14 @@ const LoginDialog = () => {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </span>
-            <button
-              type="submit"
-              onClick={() => signInWithPassword(dialogVisible)}
-            >
-              LOGIN
-            </button>
+            <span className="entry-buttons">
+              <button type="submit" onClick={() => logIn()}>
+                LOGIN
+              </button>
+              <button type="submit" onClick={() => signUp()}>
+                SIGNUP
+              </button>
+            </span>
             <a href="#">Forgot Username/Password?</a>
             <span className="third-party-login">
               <button>

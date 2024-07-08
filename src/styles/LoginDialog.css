@@ -88,8 +88,18 @@
   border-radius: 10px;
   border: none;
   transition-duration: .2s;
-  background-color: #6FB555;
 }
+.entry-buttons {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+}
+
+.entry-buttons button {
+  width: 100%;
+  background-color: #6fb555;
+}
+
 
 .login-dialog button:hover {
     filter: invert();
@@ -116,12 +126,12 @@
     width: 100%;
 }
 
-.login-dialog button:nth-child(1){
+.login-dialog .third-party-login button:nth-child(1){
     background-color: #ff0000a1;
     color: white;
 }
 
-.login-dialog button:nth-child(2){
+.login-dialog .third-party-login button:nth-child(2){
     background-color: rgb(18, 15, 15);
     color: white;
 }

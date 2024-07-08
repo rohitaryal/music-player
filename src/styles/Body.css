@@ -1,5 +1,5 @@
 .main-body {
     display: grid;
     grid-template-rows: 1fr 4fr 6fr;
-    grid-template-columns: calc(100vw - 270px);
+    grid-template-columns: calc(100vw - 260px);
 }
