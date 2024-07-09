@@ -26,7 +26,6 @@ const AllSongs = () => {
       <header>Listen More</header>
       <div className="small-card-row-container">
         {popularSongs.map((element) => {
-          console.log("HI");
           return (
             <div
               className="music-card-small"

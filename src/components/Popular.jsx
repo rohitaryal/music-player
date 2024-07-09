@@ -1,16 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Popular.css";
 import { GetFirebase } from "../util/Firebase";
+import MusicPlayer from "./Player";
 
 const Popular = () => {
   const firebase = GetFirebase();
   const [popularSongs, setPopularSongs] = useState([]);
-
-  firebase.getData("/popular/").then((data) => {
-    if (data.exists()) {
-      setPopularSongs(data.val());
-    }
+  const [music, setMusic] = useState({
+    name: "",
+    author: "",
+    image: "",
+    url: "",
+    play: false,
   });
+
+  useEffect(() => {
+    const fetchPopularSongs = async () => {
+      const data = await firebase.getData("/popular/");
+      if (data.exists()) {
+        setPopularSongs(data.val());
+      }
+    };
+
+    fetchPopularSongs();
+  }, []);
 
   return (
     <div className="popular-card">
@@ -27,7 +40,13 @@ const Popular = () => {
                 </span>
                 <button
                   onClick={() => {
-                    window.open(element.playlink, "_blank");
+                    setMusic({
+                      name: element.author,
+                      author: element.song_name,
+                      image: element.image,
+                      url: "music.mp3", //element.playlink,
+                      play: true,
+                    });
                   }}
                 >
                   Play
@@ -43,6 +62,14 @@ const Popular = () => {
           );
         })}
       </div>
+      {music.play && (
+        <MusicPlayer
+          name={music.song_name}
+          author={music.author}
+          image={music.image}
+          url={music.url}
+        />
+      )}
     </div>
   );
 };
