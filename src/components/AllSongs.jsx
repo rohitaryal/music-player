@@ -32,7 +32,11 @@ const AllSongs = () => {
               className="music-card-small"
               key={element.image}
               style={{
-                backgroundImage: `url("${element.image}")`,
+                background: `url("${element.image}"), linear-gradient(0deg, #00000088 30%, #ffffff44 100%)`,
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+                backgroundClip: "border-box",
               }}
             >
               <span className="music-detail">

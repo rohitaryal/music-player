@@ -18,7 +18,8 @@ const LoginDialog = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const logIn = () => {
+  const logIn = (e) => {
+    e.preventDefault();
     if (email == "" || !email.includes("@") || password.length < 6) {
       showToast("Invalid credidentials", "warn");
       return;
@@ -27,15 +28,16 @@ const LoginDialog = () => {
     firebase
       .logIn(email, password)
       .then((data) => {
-        setDialogVisible(false);
         showToast("Login Successful", "info");
+        setDialogVisible(false);
       })
       .catch((err) => {
         showToast(err.message, "warn");
       });
   };
 
-  const signUp = () => {
+  const signUp = (e) => {
+    e.preventDefault();
     if (email == "" || !email.includes("@") || password.length < 6) {
       showToast("Invalid credidentials", "warn");
       return;
@@ -44,12 +46,13 @@ const LoginDialog = () => {
     firebase
       .signUp(email, password)
       .then((data) => {
-        setDialogVisible(false);
         showToast("Signup Successful", "info");
+        setDialogVisible(false);
       })
       .catch((err) => {
         showToast(err.message, "warn");
       });
+
   };
 
   const showToast = (message, type) => {
@@ -90,10 +93,10 @@ const LoginDialog = () => {
               />
             </span>
             <span className="entry-buttons">
-              <button type="submit" onClick={() => logIn()}>
+              <button type="submit" onClick={(e) => logIn(e)}>
                 LOGIN
               </button>
-              <button type="submit" onClick={() => signUp()}>
+              <button type="submit" onClick={(e) => signUp(e)}>
                 SIGNUP
               </button>
             </span>
